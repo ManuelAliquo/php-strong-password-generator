@@ -1,4 +1,7 @@
 <?php
+    $minLength = 8;
+    $maxLength = 20;
+
     require "functions.php"
 ?>
 <!DOCTYPE html>
@@ -15,7 +18,7 @@
 
     <form action="">
         <label for="pass-length">Password length</label>
-        <input type="number" min="8" max="20" name="pass-length" id="pass-length" required>
+        <input type="number" min="<?php echo $minLength ?>" max="<?php echo $maxLength ?>" name="pass-length" id="pass-length" required>
         <button>Submit</button>
     </form>
    
@@ -25,7 +28,9 @@
         Your Password: <?php
         if (isset($_GET["pass-length"])) {
             $chosenlength = $_GET["pass-length"];
-            echo generatePassword($chosenlength);
+            if ($chosenlength >= $minLength && $chosenlength <= $maxLength)
+                echo generatePassword($chosenlength);
+            else echo "Length is invalid";
         }  ?>
     </div>
 </body>
