@@ -10,6 +10,7 @@
 
     if (isset($_GET["pass-length"])){
         $chosenlength = $_GET["pass-length"];
+        $_SESSION["pass-length"] = $chosenlength;
 
         $useLetters = isset($_GET["letters"]);
         $useNumbers = isset($_GET["numbers"]);
@@ -54,7 +55,7 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-end">
                     <!-- CHECKS -->
-                    <div class="fs-5">
+                    <div>
                         <h4>Use</h4>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="letters" value="1" 
