@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+.card,
+.input-group-text,
+input.form-control,
+.form-check-input {
+  border: 1.6px solid #a5a5a5;
+}
+
+.input-group-text {
+  background-color: #a5a5a5;
+}
+
+label,
+.form-check-input {
+  cursor: pointer;
+}
